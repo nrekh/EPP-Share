@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from React;
+import React, { useReducer, useEffect } from "react";
 
 const fieldReducer = (state, action) => {
     switch (action.type) {
@@ -9,7 +9,7 @@ const fieldReducer = (state, action) => {
     }
 }
 
-export default Input = (props) => {
+const Input = (props) => {
     const [fieldValue, setFieldData] = useReducer(fieldReducer, { value: '' });
 
     const handleFieldChange = (event) => {
@@ -22,6 +22,9 @@ export default Input = (props) => {
     const inputField = <input
         id={props.id} type={props.type} onChange={handleFieldChange} value={fieldValue.value} />
     return (<div>
+        <label htmlFor={props.id}>{props.label}</label>
         {inputField}
     </div>);
 }
+
+export default Input;
