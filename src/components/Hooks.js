@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect,useCallback } from React;
+import React, { useReducer, useEffect,useCallback } from "react";
 
 const formReducer = (state, action) => {
     switch (action.type) {
